@@ -1,6 +1,6 @@
 <template>
 <section class="footer">
-  <button id="navDiary">
+  <button id="navDiary" @click='toDiary'>
     <img v-if='diary' src='@/assets/diary_active.png' alt="diary">
     <img v-if='!diary' src='@/assets/diary_inactive.png' alt='diary'>
   </button>
@@ -24,8 +24,11 @@ export default {
     const toHome = () => {
       router.push('/home')
     }
+    const toDiary = () => {
+      router.push('/diary')
+    }
     return {
-      toHome
+      toHome, toDiary
     }
   },
   props: {
