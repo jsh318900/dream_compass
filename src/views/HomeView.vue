@@ -284,10 +284,10 @@ export default {
     }
 
     section .description {
-        height: 40%;
+        height: 50%;
         width: 100%;
         position: fixed;
-        bottom: -28%;
+        bottom: -37.5%;
         z-index: 50;
         background-color: rgba(170, 176, 190, 0.6);
         border-top-left-radius: 12%;
@@ -312,6 +312,7 @@ export default {
         height: 0px;
         border: 0.12rem solid #485778;
         border-radius: 0.06rem;
+        margin-bottom: 25%;
     }
 
     div.descriptionContent > * {
