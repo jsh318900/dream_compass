@@ -51,7 +51,7 @@ export default {
     }
 
     #ui {
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         margin: 0.75rem;
@@ -59,7 +59,7 @@ export default {
 
     .endingScript {
         background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85));
-        position: absolute;
+        position: fixed;
         bottom: 0;
         width: 100vw;
         height: 37.5%;
