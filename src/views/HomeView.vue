@@ -312,7 +312,7 @@ export default {
         height: 0px;
         border: 0.12rem solid #485778;
         border-radius: 0.06rem;
-        margin-bottom: 25%;
+        margin-bottom: 15%;
     }
 
     div.descriptionContent > * {
