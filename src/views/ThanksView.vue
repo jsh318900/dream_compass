@@ -50,8 +50,10 @@ export default {
 
 <style lang="css" scoped>
     .container {
+        margin: 0;
+        padding: 0;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         overflow: hidden;
         color: white;
         background: rgba(33, 33, 33, 0.67);

@@ -4,7 +4,7 @@
 <section class='main'>
     <div class='story' v-if='!extended'><h3>첫번째 꿈여행</h3></div>
     <div class='storyName' v-if='!extended'><h1>자각몽</h1></div>
-    <div class='chapterInfo'>
+    <div class='chapterInfo' :class='{extend: extended}'>
         <p>제 1 장</p>
         <p>[익숙하고 낯선 장소들]</p>
     </div>
@@ -167,7 +167,9 @@ export default {
 <style lang="css" scoped>
     .container {
         width: 100%;
-        height: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
         overflow: hidden;
     }
 
@@ -195,6 +197,10 @@ export default {
     .chapterInfo {
         transition: all 0.5s ease-in-out;
         margin-top: 8%;
+    }
+
+    .chapterInfo.extend {
+        margin-top: 20%;
     }
 
     div .episodeImageSlider {
@@ -279,8 +285,9 @@ export default {
 
     section .description {
         height: 40%;
-        position: relative;
-        top: -21%;
+        width: 100%;
+        position: absolute;
+        bottom: -28%;
         z-index: 50;
         background-color: rgba(170, 176, 190, 0.6);
         border-top-left-radius: 12%;
@@ -290,7 +297,7 @@ export default {
     }
 
     section .description.extend {
-        top: -55%;
+        bottom: 0;
     }
 
     div .descriptionContent {

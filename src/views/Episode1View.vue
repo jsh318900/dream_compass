@@ -403,23 +403,33 @@ export default {
 </script>
 
 <style lang="css" scoped>
+    html {
+        height: 100vh;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     .container {
         width: 100%;
-        height: 100%;
-        overflow: hidden;
+        height: 100vh;
     }
+
     .storyBox {
-        margin-top: 8%;
-        height: 83.5%;
+        position: fixed;
+        bottom: 0;
+        margin-top: 4%;
+        height: 80%;
         width: 100vw;
         border-top-left-radius: 5%;
         border-top-right-radius: 5%;
         background-color: rgba(255, 255, 255, 0.8);
         padding: 1.5rem;
-        padding-bottom: 10rem;
+        padding-bottom: 75%;
         overflow-y: scroll;
         -ms-overflow-style: none;
-        scrollbar-width:  none;
+        scrollbar-width: none;
     }
 
     .storyBox::-webkit=scrollbar {
@@ -483,10 +493,10 @@ export default {
     }
 
     .options {
-        position: absolute;
+        position: fixed;
         bottom: 8%;
         width: 100%;
-        height: auto;
+        height: fit-content;
         padding: 0.5rem 1rem;
         background-color: transparent;
         opacity: 0;

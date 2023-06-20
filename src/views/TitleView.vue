@@ -37,8 +37,8 @@ export default {
 
 <style lang="css" scoped>
   .container {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
   }
 
   .logoContainer {
@@ -61,7 +61,7 @@ export default {
   }
 
   .start h3 {
-    margin-top: 50%;
+    margin-top: 20%;
     font-size: 1rem;
   }
 </style>

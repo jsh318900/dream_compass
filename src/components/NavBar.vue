@@ -43,7 +43,7 @@ export default {
       height: 8%;
       margin: 0 auto;
       text-align: center;
-      position: absolute;
+      position: fixed;
       bottom: 0;
       display: flex;
       justify-content: space-between;
