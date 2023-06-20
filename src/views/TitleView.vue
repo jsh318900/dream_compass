@@ -29,6 +29,9 @@ export default {
     playSound () {
       const audio = new Audio(`${process.env.BASE_URL}background.mp3`)
       audio.play()
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen()
+      }
       this.toHome()
     }
   }
