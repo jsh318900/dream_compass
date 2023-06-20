@@ -286,7 +286,7 @@ export default {
     section .description {
         height: 40%;
         width: 100%;
-        position: absolute;
+        position: fixed;
         bottom: -28%;
         z-index: 50;
         background-color: rgba(170, 176, 190, 0.6);

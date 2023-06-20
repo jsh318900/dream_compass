@@ -326,7 +326,7 @@ export default {
             delay += 20
           })
         } else {
-          delay += 50
+          delay += 500
           setTimeout(() => { el.style = 'opacity:1; transitionDelay:2s' }, delay)
           delay += 1000
         }
