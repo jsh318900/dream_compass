@@ -43,27 +43,26 @@ export default {
 <style lang="css" scoped>
     .container {
         width: 100%;
-        height: 100vh;
+        height: 100%;
         background-image: url('@/assets/ep_ending1.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        overflow: hidden;
     }
 
     #ui {
         position: fixed;
         top: 0;
         right: 0;
-        margin: 0.75rem;
     }
 
     .endingScript {
         background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85));
         position: fixed;
         bottom: 0;
-        width: 100vw;
+        width: 390px;
         height: 37.5%;
-        padding: 1rem;
         color: white;
         backdrop-filter: blur(10px);
     }
@@ -78,6 +77,7 @@ export default {
     }
 
     .endingScript p {
+        padding: 1rem;
         margin-bottom: 0.5rem;
         font-style: normal;
         font-weight: 400;

@@ -1,16 +1,16 @@
 <template>
 <section class="footer">
-  <button id="navDiary" @click='toDiary'>
-    <img v-if='diary' src='@/assets/diary_active.png' alt="diary">
-    <img v-if='!diary' src='@/assets/diary_inactive.png' alt='diary'>
+  <button id="navHelp">
+    <img src='@/assets/footer/help.png' alt="help">
+    <span>도우미</span>
   </button>
   <button id="navHome" @click='toHome'>
-    <img v-if='home' src='@/assets/home_active.png' alt="home">
-    <img v-if='!home' src='@/assets/home_inactive.png' alt='home'>
+    <img src='@/assets/footer/home.png' alt="home">
+    <span>HOME</span>
   </button>
   <button id="navSetting">
-    <img v-if='settings' src='@/assets/setting_active.png' alt='settings'>
-    <img v-if='!settings' src='@/assets/setting_inactive.png' alt="setting">
+    <img src='@/assets/footer/settings.png' alt='settings'>
+    <span>설정</span>
   </button>
 </section>
 </template>
@@ -41,35 +41,39 @@ export default {
 
 <style lang="css" scoped>
   section.footer {
-      z-index: 100;
-      width: 100vw;
-      height: 8%;
-      margin: 0 auto;
+      width: 390px;
+      height: 71px;
       text-align: center;
-      position: fixed;
-      bottom: 0;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      background-color: #151C36;
+      background-color: #CDABA1;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      align-self: end;
+      justify-content: space-evenly;
+      margin-top: auto;
+  }
+  .footer img {
+    margin: auto;
   }
 
   .footer button {
+      display: flex;
+      flex-direction: column;
       float: left;
-      margin-left: 10%;
-      width: 20%;
+      width: 22%;
       border: 0;
       background-color: transparent;
   }
 
-  .footer button:nth-child(3) {
-      margin-right: 10%;
-  }
-
-  .footer button::after {
-      content: "";
-      clear: both;
-      display: block;
+  .footer button span {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 11.88px;
+    letter-spacing: 5%;
+    padding-top: 6px;
+    margin: auto;
+    color: #F6F3EA;
   }
 
   img {

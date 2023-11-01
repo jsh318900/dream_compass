@@ -1,18 +1,12 @@
 <template>
   <section class='container' @click='playSound'>
-    <div class="logoContainer">
-      <h1>DREAM</h1>
-      <img alt="Compass Logo" src='@/assets/logo.png'>
-      <h1>COMPASS</h1>
-      <div class="start">
-        <h3>-TAB TO START-</h3>
-      </div>
-    </div>
+
   </section>
 </template>
 
 <script>
 import { useRouter } from 'vue-router'
+import state from '@/main.js'
 
 export default {
   name: 'TitleView',
@@ -27,11 +21,15 @@ export default {
   },
   methods: {
     playSound () {
-      const audio = new Audio(`${process.env.BASE_URL}background.mp3`)
-      audio.play()
-      if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen()
+      if (state.audio === undefined) {
+        state.audio = new Audio(`${process.env.BASE_URL}background.mp3`)
+        state.audio.play()
+      } else {
+        state.audio.pause()
+        state.audio.currentTime = 0
+        state.audio.play()
       }
+
       this.toHome()
     }
   }
@@ -39,9 +37,18 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('@/assets/start_screen.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .container {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
   }
 
   .logoContainer {

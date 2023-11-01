@@ -6,22 +6,15 @@
   </router-view>
 </template>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bigshot+One&family=Nanum+Gothic:wght@400;800&family=Nanum+Myeongjo&display=swap');
 
 #app {
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Nanum Myeongjo', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('@/assets/background_image.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 390px;
+  height: 844px;
+  margin: 0 auto;
 }
 
 .fade-enter-active,

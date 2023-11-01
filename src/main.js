@@ -9,11 +9,13 @@ app.use(store)
 app.mount('#app')
 
 const state = reactive({
+  audio: undefined,
   dreamKey: 1,
   willPower: 0,
   progress: -1,
   episode1: false,
   diaryEntry: undefined,
+  previousChoice: undefined,
   writeDiary (title, content) {
     this.diaryEntry = { title: title, content: content }
   },
