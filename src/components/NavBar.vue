@@ -61,7 +61,7 @@ export default {
       display: flex;
       flex-direction: column;
       float: left;
-      width: 22%;
+      width: 85.8px;
       border: 0;
       background-color: transparent;
   }

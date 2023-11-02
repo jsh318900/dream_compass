@@ -59,11 +59,10 @@ export default {
     div.statusBar {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
-        padding-left: 112px;
-        padding-right: 112px;
         margin-top: 16.5px;
+        width: 390px;
     }
 
     div .status {

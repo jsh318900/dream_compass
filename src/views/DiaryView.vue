@@ -1,41 +1,29 @@
 <template>
 <section class='container'>
 <HeaderBar/>
-<section class='title'>
-  <h1>꿈일기</h1>
-</section>
 <section class='diaryHeader'>
+  <img src='@/assets/journal/left_arrow_journal.png' alt='day before'>
   <div id="date">{{ date }}</div>
-  <div id='back' @click='toHome'><img src='@/assets/back.png' alt='back'></div>
+  <img src='@/assets/journal/right_arrow_journal.png' alt='next day'>
 </section>
-<section v-if='!title || !content' class='diaryBox'>
-  <div class='titleBox'>
-    <textarea id='title' placeholder='무제'></textarea>
-  </div>
+<section v-if='!content' class='diaryBox'>
   <div class='contentBox'>
     <textarea id='content'></textarea>
   </div>
-  <button id='confirm' @click='confirm'><img src='@/assets/confirm.png' alt='confirm'></button>
+  <button id='confirm' @click='confirm'><img src='@/assets/journal/save.png' alt='confirm'><span>저장</span></button>
 </section>
-<section v-if='title && content && !editMode' class='diaryBox'>
-  <div class='titleBox display'>
-    <div id='title'>{{ title }}</div>
-  </div>
+<section v-if='content && !editMode' class='diaryBox'>
   <div class='contentBox display'>
     <div id='content'>{{ content }}</div>
   </div>
-  <button id='edit' @click='edit'><img src='@/assets/edit.png' alt='edit'></button>
+  <button id='edit' @click='edit'><img src='@/assets/journal/edit.png' alt='edit'><span>수정</span></button>
 </section>
-<section v-if='title && content && editMode' class='diaryBox'>
-  <div class='titleBox'>
-    <textarea id='title' v-model='title'></textarea>
-  </div>
+<section v-if='content && editMode' class='diaryBox'>
   <div class='contentBox'>
     <textarea id='content' v-model='content'></textarea>
   </div>
-  <button id='confirm' @click='confirm'><img src='@/assets/confirm.png' alt='confirm'></button>
+  <button id='confirm' @click='confirm'><img src='@/assets/journal/save.png' alt='confirm'><span>저장</span></button>
 </section>
-<button id='help'><img src='@/assets/help.png' alt='?'></button>
 <NavBar/>
 </section>
 </template>
@@ -60,26 +48,21 @@ export default {
   },
   data () {
     const d = new Date()
-    const title = state.state.diaryEntry && state.state.diaryEntry.title
     const content = state.state.diaryEntry && state.state.diaryEntry.content
     return {
-      title: title,
       content: content,
-      date: `${d.getMonth() + 1}월 ${d.getDate()}일`,
+      date: `${d.getFullYear()}.${('0' + (d.getMonth() + 1)).slice(-2)}.${('0' + d.getDate()).slice(-2)}`,
       editMode: false,
       keyReceived: false
     }
   },
   methods: {
     confirm () {
-      const title = document.querySelector('#title').value
       const content = document.querySelector('#content').value
-      console.log(title)
-      state.state.writeDiary(title, content)
-      this.title = title
+      state.state.writeDiary('', content)
       this.content = content
       this.editMode = false
-      if (title && content && !this.keyReceived) {
+      if (content && !this.keyReceived) {
         this.keyReceived = true
         state.state.incrementDreamKey()
       }
@@ -96,8 +79,8 @@ export default {
 
 <style lang="css" scoped>
   .container {
-    width: 100%;
-    height: 100vh;
+    width: 390px;
+    height: 844px;
   }
 
   textarea {
@@ -111,16 +94,9 @@ export default {
     background: transparent;
   }
 
-  .title {
-    color: #ffffff;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 2.5rem;
-    line-height: 100%;
-    letter-spacing: 0.325rem;
-    text-align: center;
-    height: 10%;
-    padding: 10% 0;
+  button {
+  display: flex;
+  flex-direction: column;
   }
 
   .diaryHeader {
@@ -134,18 +110,16 @@ export default {
     padding: 1rem;
     font-style: normal;
     font-weight: 800;
-    font-style: 2rem;
+    font-size: 20px;
     letter-spacing: 0.05rem;
-    color: #151C36;
+    color: #363D50;
+    font-family: 'Nanum Myeongjo';
+    line-height: 25px;
   }
 
   .diaryBox {
-    overflow: ;
-    background: rgba(170, 176, 190, 0.6);
-    border-top-left-radius: 10%;
-    border-top-right-radius: 10%;
     padding: 2rem;
-    height: 65%;
+    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -153,38 +127,10 @@ export default {
     justify-content: space-between;
   }
 
-  .titleBox {
-    background-color: rgba(255, 255, 255, 0.6);
-    color: #AAB0BE;
-    border-radius: 0.75rem;
-  }
-
   .contentBox {
     height: 75%;
     width: 100%;
     margin: 5% 0;
-    color: #485778;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 5%;
-  }
-
-  .titleBox.display {
-    background: transparent;
-    color: #485778;
-  }
-
-  .contentBox.display {
-    background: transparent;
-    color: #485778;
-  }
-
-  #title {
-    font-size: 0.75rem;
-    text-align: center;
-    padding-top: 0.5rem;
-    letter-spacing: 0.05rem;
-    border: none;
-    width: 100%;
   }
 
   #content {
@@ -192,6 +138,10 @@ export default {
     width: 100%;
     border: none;
     padding: 1rem;
+    font-family: 'Nanum Myeongjo';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26.25px;
   }
 
   #confirm {
@@ -204,11 +154,4 @@ export default {
     background: transparent;
   }
 
-  #help {
-    border: none;
-    background: transparent;
-    position: fixed;
-    right: 0.25rem;
-    bottom: 8.5%;
-  }
 </style>

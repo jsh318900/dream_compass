@@ -6,7 +6,7 @@
     <img v-if='previous === undefined' src="@/assets/home/chapter_1_title.png">
     <span v-if='previous !== undefined'>{{previous}}</span>
 </div>
-<section v-if='progress == 1' class='storyBox' style="height: 400px;">
+<section v-if='progress == 1' class='storyBox'>
     <div class='textarea'>
         <div class='paragraph'>
             <p>
@@ -252,7 +252,7 @@
 </section>
 
 <section v-if='progress==14' class='storyBox'>
-    <div class='textarea'>
+    <div class='textarea' style="height: 350px">
     <div class='paragraph'>
         <p>
         그렇습니다. 당신이 평소에 알던 지하철과는 다소 다른 풍경이지만 틀림 없이 이 곳은 지하철 역입니다. 당신은 문득 뒤를 돌아 당신이 걸어 나온 문을 확인합니다. 하지만 그 곳에는 엉키고 엉킨 풀이 덮고 있는 벽만 존재합니다. 분홍색 문은 어디에도 보이지 않습니다.
@@ -306,8 +306,10 @@
     </div>
 </div>
 </section>
-<div class='hl'></div>
-<span class='pageNum'>-{{page}}-</span>
+<div class="footer">
+    <div class='hl'></div>
+    <span class='pageNum'>-{{page}}-</span>
+</div>
 <NavBar/>
 </section>
 </template>
@@ -479,21 +481,23 @@ export default {
 
 <style lang="css" scoped>
     .container {
+        width: 390px;
         height: 844px;
-        margin: 0;
+        margin: auto;
         padding: 0;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
     }
     .storyHeader {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: 20px;
     }
     .storyHeader > img {
         width: 229px;
         height: 121px;
-        margin-top: 61px;
     }
 
     .storyHeader > span {
@@ -513,7 +517,8 @@ export default {
         background-color: rgba(255, 255, 255, 0.8);
         display: flex;
         flex-direction: column;
-        height: 500px;
+        align-items: center;
+        height: 380px;
     }
 
     .textarea {
@@ -522,6 +527,7 @@ export default {
         scrollbar-width: none;
         padding-left: 30px;
         padding-right: 30px;
+        width: 330px;
     }
 
     .textarea::-webkit-scrollbar {
@@ -537,16 +543,10 @@ export default {
 
     div .paragraph {
         width: 100%;
-        text-align: left;
         font-size: 0.75rem;
         text-align: justify;
         line-height: 175%;
         color: #151C36;
-    }
-
-    div .paragraph#quote {
-        padding: 1.25rem;
-        text-align: center;
     }
 
     .storyBox > * {
@@ -576,20 +576,34 @@ export default {
         opacity: 0;
         transition: opacity 1s ease-in-out;
         margin-top: auto;
+        position: absolute;
+        bottom: calc(100% - 844px + 71px + 10px + 30px + 10px);
     }
 
     .options ul {
         list-style: none;
-        padding-left: 30px;
+        margin-top: 20px;
     }
 
     .options li {
+        padding-left: 15px ;
+        margin-top: 20px;
         width: 390px;
         font-weight: 800;
         font-size: 0.8rem;
         letter-spacing: 0.05rem;
         color: #151C36;
         font-style: normal;
+    }
+
+    div.footer {
+        position: absolute;
+        bottom: calc(100% - 844px + 71px + 10px);
+        height: 30px;
+        width: 390px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     div.hl {
@@ -605,5 +619,12 @@ export default {
         font-size: 14px;
         line-height: 24.5px;
         color: #A1969E;
+    }
+
+    #quote {
+        text-align: center;
+        width: 300px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 </style>

@@ -51,13 +51,12 @@ export default {
 <style lang="css" scoped>
     .container {
         margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100vh;
+        padding: 20px;
+        width: 350px;
+        height: 804px;
         overflow: hidden;
         color: white;
         background: rgba(33, 33, 33, 0.67);
-        padding: 1rem;
         font-style: normal;
         font-weight: 700;
         font-size: 0.75rem;
@@ -86,8 +85,8 @@ export default {
         border: none;
         background-color: transparent;
         position: absolute;
-        bottom: 0;
-        right: 0;
+        right: calc(50% - 195px + 10px);
+        bottom: calc(50% - 422px + 10px);
         padding: 1rem;
         color: white;
     }

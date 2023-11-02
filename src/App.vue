@@ -14,7 +14,8 @@
   -moz-osx-font-smoothing: grayscale;
   width: 390px;
   height: 844px;
-  margin: 0 auto;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .fade-enter-active,
