@@ -59,8 +59,8 @@ export default {
 
     .endingScript {
         background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85));
-        position: fixed;
-        bottom: calc(50% - 422px + 241.5px);
+        position: absolute;
+        top: 522.5px;
         width: 330px;
         height: 241.5px;
         color: white;
