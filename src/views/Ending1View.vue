@@ -53,14 +53,14 @@ export default {
 
     #ui {
         position: fixed;
-        top: calc(50% - 422px + 10px);
+        top: 10px;
         right: calc(50% - 195px + 10px);
     }
 
     .endingScript {
         background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85));
         position: fixed;
-        bottom: calc(50% - 422px);
+        bottom: calc(50% - 422px + 241.5px);
         width: 330px;
         height: 241.5px;
         color: white;
