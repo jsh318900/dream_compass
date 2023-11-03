@@ -542,8 +542,8 @@ export default {
     }
 
     div .paragraph {
-        width: 100%;
-        font-size: 0.75rem;
+        width: 330px;
+        font-size: 12px;
         text-align: justify;
         line-height: 175%;
         color: #151C36;
@@ -555,19 +555,19 @@ export default {
     }
 
     .illustration img {
-        width: 95%;
-        height: 95%;
-        padding: 2.5%;
+        width: 313.5px;
+        height: 313.5px;
+        padding: 8.25px;
     }
 
     .illustration .caption {
-        font-size: 0.75rem;
+        font-size: 12px;
         text-align: justify;
-        letter-spacing: 0.05rem;
+        letter-spacing: 1px;
         font-style: normal;
         font-weight: 700;
         color: #485778;
-        padding: 1rem 0;
+        padding: 16px 0;
         line-height: 200%;
     }
 
@@ -590,8 +590,8 @@ export default {
         margin-top: 20px;
         width: 390px;
         font-weight: 800;
-        font-size: 0.8rem;
-        letter-spacing: 0.05rem;
+        font-size: 12.8px;
+        letter-spacing: 1px;
         color: #151C36;
         font-style: normal;
     }
