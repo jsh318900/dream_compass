@@ -73,21 +73,21 @@ export default {
     }
 
     .endingScript h3 {
-        margin: 1rem 0;
+        margin: 16px 0;
         font-style: normal;
         font-weight: 800;
-        font-size: 0.8rem;
+        font-size: 12.8px;
         line-height: 125%;
-        letter-spacing: 0.05rem;
+        letter-spacing: 1px;
     }
 
     .endingScript p {
-        margin-bottom: 0.5rem;
+        margin-bottom: 8px;
         font-style: normal;
         font-weight: 400;
-        font-size: 0.75rem;
+        font-size: 12px;
         text-align: justify;
-        letter-spacing: 0.13rem;
+        letter-spacing: 0.5px;
         line-height: 150%;
     }
 
@@ -97,11 +97,11 @@ export default {
         position: absolute;
         bottom: 0;
         right: 0;
-        padding: 1rem;
+        padding: 12px;
         color: white;
         font-style: normal;
         font-weight: 800;
-        font-size: 0.8rem;
-        letter-spacing: 0.05rem;
+        font-size: 10px;
+        letter-spacing: 1px;
     }
 </style>
